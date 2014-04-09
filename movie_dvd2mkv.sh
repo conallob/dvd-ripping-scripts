@@ -36,7 +36,7 @@ AUDIO_CODEC=${4:-ac3}
 OUTPUT_DIR="/Users/Shared/DVDRips"
 
 # caffeinate (to add a power management assertion)
-/usr/bin/caffeinate /Applications/HandBrakeCLI \
+/usr/bin/caffeinate -s /Applications/HandBrakeCLI \
   --main-feature -i "${INPUT}" \
   -e x264 -a ${AUDIO_TRACK} -E copy:${AUDIO_CODEC} \
   -o "$OUTPUT_DIR/${OUTPUT}.mkv" -m
